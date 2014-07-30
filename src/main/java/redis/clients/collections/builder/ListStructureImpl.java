@@ -14,7 +14,7 @@ class ListStructureImpl<T> extends AbstractExpirable<T> implements ListStructure
 	}
 	
 	@Override
-	public List<T> createList(String key) {
+	public List<T> get(String key) {
 		return new RedisList<> (jedis, clazz, RedisUtils.createKeyWithNameSpace(key, nameSpace));
 	}
 

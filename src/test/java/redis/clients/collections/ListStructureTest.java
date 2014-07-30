@@ -33,13 +33,13 @@ public class ListStructureTest {
 	
 	@Test
 	public void shouldReturnsList() {
-		List<ProductCart> frutisCarts =  shippingCart.createList(FRUITS);
+		List<ProductCart> frutisCarts =  shippingCart.get(FRUITS);
 		Assert.assertNotNull(frutisCarts);
 	}
 	
 	@Test
 	public void shouldAddList() {
-		List<ProductCart> fruitsCarts =  shippingCart.createList(FRUITS);
+		List<ProductCart> fruitsCarts =  shippingCart.get(FRUITS);
 		Assert.assertTrue(fruitsCarts.isEmpty());
 		fruitsCarts.add(banana);
 		Assert.assertFalse(fruitsCarts.isEmpty());
@@ -50,7 +50,7 @@ public class ListStructureTest {
 	
 	@Test
 	public void shouldSetList() {
-		List<ProductCart> fruitsCarts =  shippingCart.createList(FRUITS);
+		List<ProductCart> fruitsCarts =  shippingCart.get(FRUITS);
 
 		fruitsCarts.add(banana);
 		fruitsCarts.add(0, orange);
@@ -67,13 +67,13 @@ public class ListStructureTest {
 	
 	@Test
 	public void shouldRemoveList() {
-		List<ProductCart> fruitsCarts =  shippingCart.createList(FRUITS);
+		List<ProductCart> fruitsCarts =  shippingCart.get(FRUITS);
 		fruitsCarts.add(banana);
 	}
 	
 	@Test
 	public void shouldReturnIndexOf() {
-		List<ProductCart> fruitsCarts =  shippingCart.createList(FRUITS);
+		List<ProductCart> fruitsCarts =  shippingCart.get(FRUITS);
 		
 		
 		
@@ -91,7 +91,7 @@ public class ListStructureTest {
 	
 	@Test
 	public void shouldReturnContains() {
-		List<ProductCart> fruitsCarts =  shippingCart.createList(FRUITS);
+		List<ProductCart> fruitsCarts =  shippingCart.get(FRUITS);
 		
 		fruitsCarts.add(orange);
 		fruitsCarts.add(banana);
@@ -106,7 +106,7 @@ public class ListStructureTest {
 	@SuppressWarnings("unused")
 	@Test
 	public void shouldIterate() {
-		List<ProductCart> fruitsCarts =  shippingCart.createList(FRUITS);
+		List<ProductCart> fruitsCarts =  shippingCart.get(FRUITS);
 		fruitsCarts.add(melon);
 		fruitsCarts.add(banana);
 		int count = 0;
