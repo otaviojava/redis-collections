@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import redis.clients.collections.CountStructure;
 import redis.clients.collections.builder.RedisStrutureBuilder;
-import redis.clients.collections.util.RedisConection;
+import redis.clients.collections.util.RedisConnection;
 
 public class CountStructureTest {
 
@@ -20,8 +20,8 @@ public class CountStructureTest {
 	@Before
 	public void init() {
 		
-		countStructure = RedisStrutureBuilder.ofCount(RedisConection.JEDIS).withNameSpace("count_pages").withKey("products").buildLong();
-		countFluctuateStructure = RedisStrutureBuilder.ofCount(RedisConection.JEDIS).withNameSpace("currrency_value").withKey("dolar").buildDouble();
+		countStructure = RedisStrutureBuilder.ofCount(RedisConnection.JEDIS).withNameSpace("count_pages").withKey("products").buildLong();
+		countFluctuateStructure = RedisStrutureBuilder.ofCount(RedisConnection.JEDIS).withNameSpace("currrency_value").withKey("dolar").buildDouble();
 	}
 	
 	@Test
@@ -70,9 +70,9 @@ public class CountStructureTest {
 	
 	@AfterClass
 	public static void dispose() {
-		CountStructure<Long> countStructure = RedisStrutureBuilder.ofCount(RedisConection.JEDIS).withNameSpace("count_pages").withKey("products").buildLong();
+		CountStructure<Long> countStructure = RedisStrutureBuilder.ofCount(RedisConnection.JEDIS).withNameSpace("count_pages").withKey("products").buildLong();
 		countStructure.delete();
-		CountStructure<Double> countStructureDouble = RedisStrutureBuilder.ofCount(RedisConection.JEDIS).withNameSpace("currrency_value").withKey("dolar").buildDouble();
+		CountStructure<Double> countStructureDouble = RedisStrutureBuilder.ofCount(RedisConnection.JEDIS).withNameSpace("currrency_value").withKey("dolar").buildDouble();
 		countStructureDouble.delete();
 	}
 }

@@ -12,7 +12,7 @@ import org.junit.Test;
 import redis.clients.collections.keyValueRedisStructure;
 import redis.clients.collections.builder.RedisStrutureBuilder;
 import redis.clients.collections.model.Person;
-import redis.clients.collections.util.RedisConection;
+import redis.clients.collections.util.RedisConnection;
 
 public class KeyValueRedsStructureTest {
 	
@@ -30,8 +30,8 @@ public class KeyValueRedsStructureTest {
 	
 	@Before
 	public void init() {
-		personStructure = RedisStrutureBuilder.ofKeyValue(RedisConection.JEDIS, Person.class).withNameSpace("person_key_value").build();
-		personTemporaryStructure = RedisStrutureBuilder.ofKeyValue(RedisConection.JEDIS, Person.class).withNameSpace("person_key_value").withttl(TWO_SECONDS).build();
+		personStructure = RedisStrutureBuilder.ofKeyValue(RedisConnection.JEDIS, Person.class).withNameSpace("person_key_value").build();
+		personTemporaryStructure = RedisStrutureBuilder.ofKeyValue(RedisConnection.JEDIS, Person.class).withNameSpace("person_key_value").withttl(TWO_SECONDS).build();
 	}
 	
 	@Test
@@ -86,7 +86,7 @@ public class KeyValueRedsStructureTest {
 	
 	@AfterClass
 	public static void dispose() {
-		keyValueRedisStructure<Person> personStructure = RedisStrutureBuilder.ofKeyValue(RedisConection.JEDIS, Person.class).withNameSpace("person_key_value").build();
+		keyValueRedisStructure<Person> personStructure = RedisStrutureBuilder.ofKeyValue(RedisConnection.JEDIS, Person.class).withNameSpace("person_key_value").build();
 		personStructure.delete(FRANCESQUINI_KEY);
 		personStructure.delete(OTAVIOJAVA_KEY);
 		personStructure.delete(GAMA_KEY);

@@ -11,7 +11,7 @@ import org.junit.Test;
 import redis.clients.collections.SetStructure;
 import redis.clients.collections.builder.RedisStrutureBuilder;
 import redis.clients.collections.model.User;
-import redis.clients.collections.util.RedisConection;
+import redis.clients.collections.util.RedisConnection;
 
 public class SetStructureTest {
 
@@ -21,7 +21,7 @@ public class SetStructureTest {
 	
 	@Before
 	public void init() {
-		socialMediaUsers = RedisStrutureBuilder.ofSet(RedisConection.JEDIS, User.class).withNameSpace("socialMedia").build();
+		socialMediaUsers = RedisStrutureBuilder.ofSet(RedisConnection.JEDIS, User.class).withNameSpace("socialMedia").build();
 	}
 	
 	@Test

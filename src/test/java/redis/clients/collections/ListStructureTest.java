@@ -13,7 +13,7 @@ import org.junit.Test;
 import redis.clients.collections.ListStructure;
 import redis.clients.collections.builder.RedisStrutureBuilder;
 import redis.clients.collections.model.ProductCart;
-import redis.clients.collections.util.RedisConection;
+import redis.clients.collections.util.RedisConnection;
 
 public class ListStructureTest {
 
@@ -28,7 +28,7 @@ public class ListStructureTest {
 	
 	@Before
 	public void init() {
-		shippingCart = RedisStrutureBuilder.ofList(RedisConection.JEDIS, ProductCart.class).withNameSpace("list_producs").build();
+		shippingCart = RedisStrutureBuilder.ofList(RedisConnection.JEDIS, ProductCart.class).withNameSpace("list_producs").build();
 	}
 	
 	@Test

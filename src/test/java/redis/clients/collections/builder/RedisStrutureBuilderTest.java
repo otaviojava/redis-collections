@@ -13,7 +13,7 @@ import redis.clients.collections.builder.RankingStructureBuilder;
 import redis.clients.collections.builder.RedisStrutureBuilder;
 import redis.clients.collections.builder.SetStructureBuilder;
 import redis.clients.collections.model.Person;
-import redis.clients.collections.util.RedisConection;
+import redis.clients.collections.util.RedisConnection;
 
 @SuppressWarnings("unused")
 public class RedisStrutureBuilderTest {
@@ -21,69 +21,69 @@ public class RedisStrutureBuilderTest {
 
 	@Test
 	public void shouldCreateKeyValueStrutureBuilder() {
-		KeyValueBuilder<Person> personStructure =  RedisStrutureBuilder.ofKeyValue(RedisConection.JEDIS, Person.class);
+		KeyValueBuilder<Person> personStructure =  RedisStrutureBuilder.ofKeyValue(RedisConnection.JEDIS, Person.class);
 		Assert.assertNotNull(personStructure);
 	}
 	
 	@Test(expected = NullPointerException.class)
 	public void shouldRetornErroWhenCreatedKeyKeyValueStructureBuilder() {
-		KeyValueBuilder<Person> personStructure =  RedisStrutureBuilder.ofKeyValue(RedisConection.JEDIS, null);
+		KeyValueBuilder<Person> personStructure =  RedisStrutureBuilder.ofKeyValue(RedisConnection.JEDIS, null);
 	}
 	
 	@Test
 	public void shouldCreateCountStruture() {
-		CountStructureBuilder countStructure = RedisStrutureBuilder.ofCount(RedisConection.JEDIS);
+		CountStructureBuilder countStructure = RedisStrutureBuilder.ofCount(RedisConnection.JEDIS);
 		Assert.assertNotNull(countStructure);
 	}
 	
 	@Test
 	public void shouldCreateRankingStruture() {
-		RankingStructureBuilder countStructure = RedisStrutureBuilder.ofRanking(RedisConection.JEDIS);
+		RankingStructureBuilder countStructure = RedisStrutureBuilder.ofRanking(RedisConnection.JEDIS);
 		Assert.assertNotNull(countStructure);
 	}
 	
 	@Test
 	public void shouldCreateListStrutureBuilder() {
-		ListStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofList(RedisConection.JEDIS, Person.class);
+		ListStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofList(RedisConnection.JEDIS, Person.class);
 		Assert.assertNotNull(personStructure);
 	}
 	
 	@Test(expected = NullPointerException.class)
 	public void shouldRetornErroWhenCreatedListStructureBuilder() {
-		ListStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofList(RedisConection.JEDIS, null);
+		ListStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofList(RedisConnection.JEDIS, null);
 	}
 	
 	@Test
 	public void shouldCreateSetStrutureBuilder() {
-		SetStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofSet(RedisConection.JEDIS, Person.class);
+		SetStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofSet(RedisConnection.JEDIS, Person.class);
 		Assert.assertNotNull(personStructure);
 	}
 	
 	@Test(expected = NullPointerException.class)
 	public void shouldRetornErroWhenCreatedSetStructureBuilder() {
-		SetStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofSet(RedisConection.JEDIS, null);
+		SetStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofSet(RedisConnection.JEDIS, null);
 	}
 	
 	@Test
 	public void shouldCreateMapStrutureBuilder() {
-		MapStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofMap(RedisConection.JEDIS, Person.class);
+		MapStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofMap(RedisConnection.JEDIS, Person.class);
 		Assert.assertNotNull(personStructure);
 	}
 	
 	@Test(expected = NullPointerException.class)
 	public void shouldRetornErroWhenCreatedMapStructureBuilder() {
-		MapStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofMap(RedisConection.JEDIS, null);
+		MapStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofMap(RedisConnection.JEDIS, null);
 	}
 	
 	@Test
 	public void shouldCreateQueueStrutureBuilder() {
-		QueueStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofQueue(RedisConection.JEDIS, Person.class);
+		QueueStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofQueue(RedisConnection.JEDIS, Person.class);
 		Assert.assertNotNull(personStructure);
 	}
 	
 	@Test(expected = NullPointerException.class)
 	public void shouldRetornErroWhenCreatedQueueStructureBuilder() {
-		QueueStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofQueue(RedisConection.JEDIS, null);
+		QueueStructureBuilder<Person> personStructure =  RedisStrutureBuilder.ofQueue(RedisConnection.JEDIS, null);
 	}
 	
 	

@@ -14,7 +14,7 @@ import org.junit.Test;
 import redis.clients.collections.MapStructure;
 import redis.clients.collections.builder.RedisStrutureBuilder;
 import redis.clients.collections.model.Species;
-import redis.clients.collections.util.RedisConection;
+import redis.clients.collections.util.RedisConnection;
 
 public class MapStructureTest {
 
@@ -26,7 +26,7 @@ public class MapStructureTest {
 	
 	@Before
 	public void init() {
-		zoo = RedisStrutureBuilder.ofMap(RedisConection.JEDIS, Species.class).withNameSpace("animalZoo").build();
+		zoo = RedisStrutureBuilder.ofMap(RedisConnection.JEDIS, Species.class).withNameSpace("animalZoo").build();
 	}
 	
 	@Test

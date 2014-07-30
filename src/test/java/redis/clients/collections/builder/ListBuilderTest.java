@@ -8,20 +8,20 @@ import redis.clients.collections.ListStructure;
 import redis.clients.collections.builder.RedisBuilderException;
 import redis.clients.collections.builder.RedisStrutureBuilder;
 import redis.clients.collections.model.Person;
-import redis.clients.collections.util.RedisConection;
+import redis.clients.collections.util.RedisConnection;
 
 public class ListBuilderTest {
 
 	
 	@Test
 	public void shouldCreateListStructure() {
-		ListStructure<Person> personStructure =  RedisStrutureBuilder.ofList(RedisConection.JEDIS, Person.class).withNameSpace("nameSpaceList").build();
+		ListStructure<Person> personStructure =  RedisStrutureBuilder.ofList(RedisConnection.JEDIS, Person.class).withNameSpace("nameSpaceList").build();
 		Assert.assertNotNull(personStructure);
 	}
 	
 	@Test(expected = RedisBuilderException.class)
 	public void shouldNotCreateListStructure() {
 		@SuppressWarnings("unused")
-		ListStructure<Person> personStructure =  RedisStrutureBuilder.ofList(RedisConection.JEDIS, Person.class).build();
+		ListStructure<Person> personStructure =  RedisStrutureBuilder.ofList(RedisConnection.JEDIS, Person.class).build();
 	}
 }

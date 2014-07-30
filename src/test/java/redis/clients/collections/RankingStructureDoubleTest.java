@@ -12,7 +12,7 @@ import redis.clients.collections.Ranking;
 import redis.clients.collections.RankingStructure;
 import redis.clients.collections.ScoresPoint;
 import redis.clients.collections.builder.RedisStrutureBuilder;
-import redis.clients.collections.util.RedisConection;
+import redis.clients.collections.util.RedisConnection;
 
 public class RankingStructureDoubleTest {
 
@@ -21,7 +21,7 @@ public class RankingStructureDoubleTest {
 	
 	@Before
 	public void init() {
-		laughThings = RedisStrutureBuilder.ofRanking(RedisConection.JEDIS).withNameSpace("laughThings").buildDouble();
+		laughThings = RedisStrutureBuilder.ofRanking(RedisConnection.JEDIS).withNameSpace("laughThings").buildDouble();
 	}
 	
 	@Test

@@ -12,7 +12,7 @@ import org.junit.Test;
 import redis.clients.collections.QueueStructure;
 import redis.clients.collections.builder.RedisStrutureBuilder;
 import redis.clients.collections.model.LineBank;
-import redis.clients.collections.util.RedisConection;
+import redis.clients.collections.util.RedisConnection;
 
 public class QueueStructureTest {
 
@@ -20,7 +20,7 @@ public class QueueStructureTest {
 	
 	@Before
 	public void init() {
-		serviceBank =  RedisStrutureBuilder.ofQueue(RedisConection.JEDIS, LineBank.class).withNameSpace("serviceBank").build();
+		serviceBank =  RedisStrutureBuilder.ofQueue(RedisConnection.JEDIS, LineBank.class).withNameSpace("serviceBank").build();
 	}
 	
 	@Test

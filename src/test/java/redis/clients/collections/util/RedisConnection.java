@@ -2,7 +2,7 @@ package redis.clients.collections.util;
 
 import redis.clients.jedis.Jedis;
 
-public class RedisConection {
+public class RedisConnection {
 
 	public static final Jedis JEDIS;
 	

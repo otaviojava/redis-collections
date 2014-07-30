@@ -15,7 +15,7 @@ import redis.clients.collections.ScoresPoint;
 import redis.clients.collections.builder.RedisStrutureBuilder;
 import redis.clients.collections.model.ChampionShip;
 import redis.clients.collections.model.TeamSoccer;
-import redis.clients.collections.util.RedisConection;
+import redis.clients.collections.util.RedisConnection;
 
 public class RankingStructureLongTest {
 
@@ -35,7 +35,7 @@ public class RankingStructureLongTest {
 	
 	@Before
 	public void init() {
-		fifa = RedisStrutureBuilder.ofRanking(RedisConection.JEDIS).withNameSpace("fifa").buildLong();
+		fifa = RedisStrutureBuilder.ofRanking(RedisConnection.JEDIS).withNameSpace("fifa").buildLong();
 		firstDivision = Arrays.asList(corinthians, bahia, vitoria, palmeiras);
 		roles = new ChampionShip();
 		brazilianChampionShip = fifa.create("brazilianChampionShip");
